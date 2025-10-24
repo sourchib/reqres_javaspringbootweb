@@ -7,15 +7,28 @@
         <File name="FileLogger" fileName="logs/app.log" append="true">
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
         </File>
+        <!--        <RollingFile name="DailyRollingFileAppender"-->
+        <!--                     fileName="logs/app.log"-->
+        <!--                     filePattern="logs/app-%d{yyyy-MM-dd}.log.gz">-->
+        <!--            <PatternLayout>-->
+        <!--                <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>-->
+        <!--            </PatternLayout>-->
+        <!--            <Policies>-->
+        <!--                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>-->
+        <!--            </Policies>-->
+        <!--            <DefaultRolloverStrategy max="7"/> &lt;!&ndash; Retain logs for 7 days &ndash;&gt;-->
+        <!--        </RollingFile>-->
     </Appenders>
 
     <Loggers>
-        <Logger name="com.juaracoding" level="debug" additivity="false">
+        <Logger name="com.juaracoding" level="INFO" additivity="false">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="FileLogger"/>
+            <!--            <AppenderRef ref="DailyRollingFileAppender"/>-->
         </Logger>
-        <Root level="error">
+        <Root level="INFO">
             <AppenderRef ref="Console"/>
+            <!--            <AppenderRef ref="DailyRollingFileAppender"/>-->
         </Root>
     </Loggers>
 </Configuration>

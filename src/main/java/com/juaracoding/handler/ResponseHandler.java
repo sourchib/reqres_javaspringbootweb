@@ -27,7 +27,7 @@ public class ResponseHandler {
         m.put("timestamp", Instant.now().toString());
         m.put("success",!status.isError());
         if(errorCode!=null){
-            m.put("error-code",errorCode);
+            m.put("error_code",errorCode);
             m.put("path",request.getRequestURI());
 //            m.put("path",request.getPathInfo());
         }
@@ -49,7 +49,7 @@ public class ResponseHandler {
         m.put("timestamp", Instant.now().toString());
         m.put("success",!status.isError());
         if(errorCode!=null){
-            m.put("error-code",errorCode);
+            m.put("error_code",errorCode);
             m.put("path",request.getContextPath());
         }
         return new ResponseEntity<>(m,status);

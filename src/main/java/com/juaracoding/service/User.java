@@ -1,4 +1,4 @@
-package com.juaracoding.model;
+package com.juaracoding.service;
 
 /*
 IntelliJ IDEA 2022.3.1 (Community Edition)

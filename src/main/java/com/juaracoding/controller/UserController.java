@@ -11,7 +11,7 @@ Version 1.0
 */
 
 import com.juaracoding.controller.UserController;
-import com.juaracoding.model.User;
+import com.juaracoding.service.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.*;
