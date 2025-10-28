@@ -1,34 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="INFO">
+<Configuration status="WARN">
     <Appenders>
-        <Console name="Console" target="SYSTEM_OUT">
+
+        <Console name="ConsoleAppender" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
-        <File name="FileLogger" fileName="logs/app.log" append="true">
+
+        <RollingFile name="DailyRollingFileAppender"
+                     fileName="logs/app.log"
+                     filePattern="logs/app-%d{yyyy-MM-dd}.log.gz">
+
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
-        </File>
-        <!--        <RollingFile name="DailyRollingFileAppender"-->
-        <!--                     fileName="logs/app.log"-->
-        <!--                     filePattern="logs/app-%d{yyyy-MM-dd}.log.gz">-->
-        <!--            <PatternLayout>-->
-        <!--                <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>-->
-        <!--            </PatternLayout>-->
-        <!--            <Policies>-->
-        <!--                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>-->
-        <!--            </Policies>-->
-        <!--            <DefaultRolloverStrategy max="7"/> &lt;!&ndash; Retain logs for 7 days &ndash;&gt;-->
-        <!--        </RollingFile>-->
+
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+
+            <DefaultRolloverStrategy max="7"/>
+        </RollingFile>
+
     </Appenders>
 
     <Loggers>
         <Logger name="com.juaracoding" level="INFO" additivity="false">
-            <AppenderRef ref="Console"/>
-            <AppenderRef ref="FileLogger"/>
-            <!--            <AppenderRef ref="DailyRollingFileAppender"/>-->
-        </Logger>
+            <AppenderRef ref="DailyRollingFileAppender"/>
+            <AppenderRef ref="ConsoleAppender"/> </Logger>
+
         <Root level="INFO">
-            <AppenderRef ref="Console"/>
-            <!--            <AppenderRef ref="DailyRollingFileAppender"/>-->
-        </Root>
+            <AppenderRef ref="DailyRollingFileAppender"/>
+            <AppenderRef ref="ConsoleAppender"/> </Root>
     </Loggers>
 </Configuration>

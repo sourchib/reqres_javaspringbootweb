@@ -1,21 +1,24 @@
 package com.juaracoding.model;
+
 /*
 IntelliJ IDEA 2022.3.1 (Community Edition)
 Build #IC-223.8214.52, built on December 20, 2022
 @Author LENOVO a.k.a. M Muchib Zainul Fikry
 Java Developer
-Created on 28/10/2025 18:38
-@Last Modified 28/10/2025 18:38
+Created on 28/10/2025 19:09
+@Last Modified 28/10/2025 19:09
 Version 1.0
 */
+
 import jakarta.persistence.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
-@Table(name = "MstKategori")
-public class KategoriProduk {
+@Table(name = "MstProduk")
+public class produk {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,11 +27,13 @@ public class KategoriProduk {
     @Column(name = "Nama",length = 60,nullable = false,unique = true)
     private String nama;
 
-//    @OneToMany
-//    private List<Produk> produk;
+    /** change script when migration */
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "IDKategoriProduk",foreignKey = @ForeignKey(name = "fk-to-kategori",foreignKeyDefinition = "FOREIGN KEY ([IDKategoriProduk]) REFERENCES [projectz].[MstKategori] ([ID]) ON UPDATE SET NULL"))
+    private kategoriproduk kategoriProduk;
 
     @Column(name = "CreatedBy",nullable = false,updatable = false)
-    private Long createdBy;
+    private Long createdBy=1L;
     @Column(name = "CreatedDate",nullable = false,updatable = false)
     private LocalDateTime createdDate;
     @Column(name = "ModifiedBy",insertable = false)

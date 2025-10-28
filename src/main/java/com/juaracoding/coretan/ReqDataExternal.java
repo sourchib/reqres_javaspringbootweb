@@ -1,12 +1,19 @@
 package com.juaracoding.coretan;
 
 
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Pattern;
+import org.springframework.format.annotation.DateTimeFormat;
 
 public class ReqDataExternal {
 
     private Long id;
+    @Pattern(regexp = "^[a-z\\s]{6,15}$")
     private String nama;
+    @Pattern(regexp = "^[a-zA-Z0-9\\s\\/.]{5,255}$")
     private String alamat;
+    private String email;//RFC_5322
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private String tanggalLahir;
 
     public Long getId() {
