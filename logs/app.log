@@ -1,0 +1,3 @@
+2025-10-24 22:13:36 [main] INFO  com.juaracoding.Main - Starting Main using Java 21 with PID 13904 (C:\Users\LENOVO\Documents\JavaBackEnd & DevOps\reqres_javaspringbootweb\target\classes started by LENOVO in C:\Users\LENOVO\Documents\JavaBackEnd & DevOps\reqres_javaspringbootweb)
+2025-10-24 22:13:36 [main] INFO  com.juaracoding.Main - No active profile set, falling back to 1 default profile: "default"
+2025-10-24 22:13:48 [main] INFO  com.juaracoding.Main - Started Main in 14.418 seconds (process running for 22.518)
