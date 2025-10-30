@@ -62,7 +62,7 @@ public class HelloController {
     }
 
     /**
-     sample request : http://localhost:8080/pv/3/Paul%20Malau/1995-12-12?no_hp=08129128984&alamat_lengkap=bogor
+    sample request : http://localhost:8080/pv/3/Paul%20Malau/1995-12-12?no_hp=08129128984&alamat_lengkap=bogor
      */
     @GetMapping("/pv/{id}/{nama_lengkap}/{tgl_lahir}")
     public Map<String,Object> pv(
@@ -94,7 +94,7 @@ public class HelloController {
             @RequestParam(value = "no_hp") String noHp,
             @RequestParam(value = "alamat_lengkap") String alamatLengkap,
             @RequestBody Pelanggan pelanggan
-    ){
+            ){
         Map<String,Object> m = new HashMap<>();
         m.put("id",id);
         m.put("nama_lengkap",namaLengkap);
@@ -121,7 +121,7 @@ public class HelloController {
             @RequestParam(value = "alamat_lengkap") String alamatLengkap,
             @RequestParam String nilai1,
             @RequestParam(value = "file_gambar") MultipartFile file
-    ){
+            ){
         Map<String,Object> m = new HashMap<>();
         m.put("id",id);
         m.put("nama_lengkap",namaLengkap);
