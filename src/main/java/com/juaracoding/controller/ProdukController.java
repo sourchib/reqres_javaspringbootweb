@@ -5,6 +5,7 @@ import com.juaracoding.dto.validation.ValProdukDTO;
 import com.juaracoding.handler.ResponseHandler;
 import com.juaracoding.service.ProdukService;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -103,5 +104,20 @@ public class ProdukController {
             default:sortBy="id";break;
         }
         return sortBy;
+    }
+
+    @GetMapping("/download-excel")
+    public void downloadExcel(@RequestParam String column,
+                              @RequestParam String value,
+                              HttpServletRequest request,
+                              HttpServletResponse response){
+        produkService.downloadReportExcel(column,value,request,response);
+    }
+    @GetMapping("/download-pdf")
+    public void downloadPDF(@RequestParam String column,
+                              @RequestParam String value,
+                              HttpServletRequest request,
+                              HttpServletResponse response){
+        produkService.downloadReportPDF(column,value,request,response);
     }
 }

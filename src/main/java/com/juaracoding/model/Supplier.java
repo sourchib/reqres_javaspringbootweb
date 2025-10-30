@@ -1,7 +1,5 @@
 package com.juaracoding.model;
 
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -30,7 +28,18 @@ public class Supplier {
     @Column(name = "ModifiedDate",insertable = false)
     private LocalDateTime modifiedDate;
 
-//    @ManyToMany
+    @ManyToMany(mappedBy = "supplierList")
+    private List<Produk> produkList;
+
+    public List<Produk> getProdukList() {
+        return produkList;
+    }
+
+    public void setProdukList(List<Produk> produkList) {
+        this.produkList = produkList;
+    }
+
+    //    @ManyToMany
 //    @JsonBackReference
 //    List<Produk> produkList ;
 
