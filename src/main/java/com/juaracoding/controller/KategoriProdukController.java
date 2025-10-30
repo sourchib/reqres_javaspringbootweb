@@ -1,11 +1,22 @@
 package com.juaracoding.controller;
 
+import com.juaracoding.config.OtherConfig;
+import com.juaracoding.model.KategoriProduk;
+import com.juaracoding.service.KategoriProdukService;
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("kategoriproduk")
 public class KategoriProdukController {
 
+    @Autowired
+    private KategoriProdukService kategoriProdukService;
     // POST : localhost:8080/kategoriproduk
     @PostMapping
     public void save(){
@@ -26,8 +37,9 @@ public class KategoriProdukController {
 
     // GET : localhost:8080/kategoriproduk
     @GetMapping
-    public void findAll(){
-
+    public ResponseEntity<Object> findAll(HttpServletRequest request){
+        Pageable pageable = PageRequest.of(0, OtherConfig.getDefaultPaginationSize(), Sort.by("id"));//asc dan desc
+        return kategoriProdukService.findAll(pageable,request);
     }
 
     // GET : localhost:8080/kategoriproduk/1

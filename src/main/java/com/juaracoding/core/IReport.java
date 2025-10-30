@@ -12,6 +12,6 @@ public interface IReport<T> {
     public ResponseEntity<Object> uploadDataExcel(MultipartFile file , HttpServletRequest request);//201-210
     public void downloadReportExcel(String column, String value , HttpServletRequest request);//211-220
     public void downloadReportPDF(String column, String value , HttpServletRequest request);//221-230
-    public List<T> convertListWorkBookToListEntity(List<Map<String,String>> map);//231-240
+    public List<T> convertListWorkBookToListEntity(List<Map<String,String>> map,Long id);//231-240
 
 }

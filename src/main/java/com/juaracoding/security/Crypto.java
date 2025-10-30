@@ -1,13 +1,5 @@
 package com.juaracoding.security;
-/*
-IntelliJ IDEA 2022.3.1 (Community Edition)
-Build #IC-223.8214.52, built on December 20, 2022
-@Author LENOVO a.k.a. M Muchib Zainul Fikry
-Java Developer
-Created on 28/10/2025 18:28
-@Last Modified 28/10/2025 18:28
-Version 1.0
-*/
+
 import org.bouncycastle.crypto.BufferedBlockCipher;
 import org.bouncycastle.crypto.engines.AESLightEngine;
 import org.bouncycastle.crypto.modes.CBCBlockCipher;
@@ -17,7 +9,7 @@ import org.bouncycastle.util.encoders.Hex;
 
 public class Crypto {
 
-    //    private static final String defaultKey = "4d05ac36ce72f080dc9e29af7d03bf0dd15a530305415c811a6a64767108145d";
+//    private static final String defaultKey = "4d05ac36ce72f080dc9e29af7d03bf0dd15a530305415c811a6a64767108145d";
 //    private static final String defaultKey = "c953245d42feab21959733db0300bb2c296f54fc4fc7f1c150776b7800d27365";
 //    private static final String defaultKey = "28e0d502a6db943d67be50a16d3641869f1d1f31088708f3a6677bdae1b06bc3";
     private static final String defaultKey = "3a05064ff70f47e8addb2d0b2be94f5e6434a1980ba124e914e5ee89902aec09";
@@ -73,5 +65,3 @@ public class Crypto {
 //        System.out.println("Decryption Result : "+performDecrypt(strToDecrypt));
     }
 }
-
-

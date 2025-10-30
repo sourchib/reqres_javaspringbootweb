@@ -3,7 +3,13 @@ package com.juaracoding.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
-@Entity(name = "ModelKategoriProduk") // Beri nama unik
+
+
+/**
+ * platform code : SLS
+ * modul code : 01
+ */
+@Entity
 @Table(name = "MstKategori")
 public class KategoriProduk {
 

@@ -19,24 +19,24 @@ public class LoggingFile {
                     append("ERROR IS ==> ").append(ex.getMessage()).append(System.getProperty("line.separator")));
         }
     }
-    public static void logException(String strClass,String strMethod,String req,Exception ex){
-        if(OtherConfig.getEnableLogFile().equals("y")){
-            sBuild.setLength(0);
-            logger.error(sBuild.append(System.getProperty("line.separator")).
-                    append("ERROR IN CLASS ==> ").append(strClass).append(System.getProperty("line.separator")).
-                    append("METHOD ==> ").append(strMethod).append(System.getProperty("line.separator")).
-                    append("REQUEST ==> ").append(req).append(System.getProperty("line.separator")).
-                    append("ERROR IS ==> ").append(ex.getMessage()).append(System.getProperty("line.separator")));
-        }
-    }
-
-    public static void logException(String strClass,String strMethod){
-        if(OtherConfig.getEnableLogFile().equals("y")){
-            sBuild.setLength(0);
-            logger.error(sBuild.append(System.getProperty("line.separator")).
-                    append("ERROR IN CLASS ==> ").append(strClass).append(System.getProperty("line.separator")).
-                    append("METHOD ==> ").append(strMethod).append(System.getProperty("line.separator")));
-
-        }
-    }
+//    public static void logException(String strClass,String strMethod,String req,Exception ex){
+//        if(OtherConfig.getEnableLogFile().equals("y")){
+//            sBuild.setLength(0);
+//            logger.error(sBuild.append(System.getProperty("line.separator")).
+//                    append("ERROR IN CLASS ==> ").append(strClass).append(System.getProperty("line.separator")).
+//                    append("METHOD ==> ").append(strMethod).append(System.getProperty("line.separator")).
+//                    append("REQUEST ==> ").append(req).append(System.getProperty("line.separator")).
+//                    append("ERROR IS ==> ").append(ex.getMessage()).append(System.getProperty("line.separator")));
+//        }
+//    }
+//
+//    public static void logException(String strClass,String strMethod){
+//        if(OtherConfig.getEnableLogFile().equals("y")){
+//            sBuild.setLength(0);
+//            logger.error(sBuild.append(System.getProperty("line.separator")).
+//                    append("ERROR IN CLASS ==> ").append(strClass).append(System.getProperty("line.separator")).
+//                    append("METHOD ==> ").append(strMethod).append(System.getProperty("line.separator")));
+//
+//        }
+//    }
 }

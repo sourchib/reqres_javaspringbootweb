@@ -1,23 +1,8 @@
 package com.juaracoding.model;
-/*
-IntelliJ IDEA 2022.3.1 (Community Edition)
-Build #IC-223.8214.52, built on December 20, 2022
-@Author LENOVO a.k.a. M Muchib Zainul Fikry
-Java Developer
-Created on 29/10/2025 20:30
-@Last Modified 29/10/2025 20:30
-Version 1.0
-*/
+
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
-import java.time.LocalDateTime;
-import java.util.List;
-
-import jakarta.persistence.*;
-        import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;

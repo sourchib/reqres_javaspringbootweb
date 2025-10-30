@@ -1,9 +1,11 @@
 package com.juaracoding.model;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * platform code : SLS
@@ -28,6 +30,9 @@ public class Supplier {
     @Column(name = "ModifiedDate",insertable = false)
     private LocalDateTime modifiedDate;
 
+//    @ManyToMany
+//    @JsonBackReference
+//    List<Produk> produkList ;
 
     public Long getId() {
         return id;

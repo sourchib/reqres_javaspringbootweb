@@ -9,7 +9,6 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -84,6 +83,20 @@ public class ExternalController {
     public String errorin(){
         try{
             int x = 1/0;
+            Thread.sleep(1000);
+        }catch(InputMismatchException e){
+            LoggingFile.logException(className,"errorin()",e);
+        }catch (InterruptedException e){
+            LoggingFile.logException(className,"errorin()",e);
+        }
+        catch (ArithmeticException e){
+            LoggingFile.logException(className,"errorin()",e);
+        }
+        catch (NullPointerException e){
+            LoggingFile.logException(className,"errorin()",e);
+        }
+        catch (IllegalArgumentException e){
+            LoggingFile.logException(className,"errorin()",e);
         }catch (Exception e){
             LoggingFile.logException(className,"errorin()",e);
         }

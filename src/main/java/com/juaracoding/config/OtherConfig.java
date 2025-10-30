@@ -9,6 +9,16 @@ import org.springframework.context.annotation.PropertySource;
 public class OtherConfig {
 
     private static String enableLogFile;
+    private static Integer defaultPaginationSize;
+
+    public static Integer getDefaultPaginationSize() {
+        return defaultPaginationSize;
+    }
+
+    @Value("${default.pagination.size}")
+    private void setDefaultPaginationSize(Integer defaultPaginationSize) {
+        OtherConfig.defaultPaginationSize = defaultPaginationSize;
+    }
 
     public static String getEnableLogFile() {
         return enableLogFile;

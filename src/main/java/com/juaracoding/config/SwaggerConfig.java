@@ -1,13 +1,4 @@
 package com.juaracoding.config;
-/*
-IntelliJ IDEA 2022.3.1 (Community Edition)
-Build #IC-223.8214.52, built on December 20, 2022
-@Author LENOVO a.k.a. M Muchib Zainul Fikry
-Java Developer
-Created on 29/10/2025 20:03
-@Last Modified 29/10/2025 20:03
-Version 1.0
-*/
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
@@ -33,7 +24,7 @@ public class SwaggerConfig {
                 .info(new Info().title("Springboot+JPA+JWT+SQLServer")
                         .description("SPRINGBOOT REST API")
                         .version("1.0").contact(new Contact().name("Juara Coding Dev").email( "jcoding@juaracoding.com")
-                                .url("localhost:8033"))
+                        .url("localhost:8033"))
                         .license(new License().name("Springboot Open Source License")
                                 .url("https://spring.io/")));
     }
@@ -44,5 +35,3 @@ public class SwaggerConfig {
 //                .scheme("bearer");
 //    }
 }
-
-
