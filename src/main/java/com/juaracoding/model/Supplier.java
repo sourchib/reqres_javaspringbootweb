@@ -1,6 +1,8 @@
 package com.juaracoding.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -22,9 +24,11 @@ public class Supplier {
     @Column(name = "CreatedBy",nullable = false,updatable = false)
     private Long createdBy=1L;
     @Column(name = "CreatedDate",nullable = false,updatable = false)
+    @CreationTimestamp
     private LocalDateTime createdDate;
     @Column(name = "ModifiedBy",insertable = false)
-    private Long modifiedBy;
+    private Long modifiedBy=1L;
+    @UpdateTimestamp
     @Column(name = "ModifiedDate",insertable = false)
     private LocalDateTime modifiedDate;
 

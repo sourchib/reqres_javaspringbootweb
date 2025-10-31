@@ -60,31 +60,26 @@ public class ProdukService implements IService<Produk>, IReport<Produk> {
     public ResponseEntity<Object> save(Produk produk, HttpServletRequest request) {
 
         if(produk==null){
-            return new ResponseHandler().handleResponse("Data Gagal Disimpan",
-                    HttpStatus.BAD_REQUEST,null,"SLS03FV001",request);
+            return GlobalResponse.dataGagalDisimpan("SLS03FV001",request);
         }
         try{
             produkRepo.save(produk);
         }catch (Exception e){
             LoggingFile.logException(className,"save(Produk produk, HttpServletRequest request) "+ RequestCapture.allRequest(request),e);
-            return new ResponseHandler().handleResponse("Data Gagal Disimpan",
-                    HttpStatus.INTERNAL_SERVER_ERROR,null,"SLS03FE001",request);
+            return GlobalResponse.dataGagalDisimpan("SLS03FE001",request);
         }
-        return new ResponseHandler().handleResponse("Data Berhasil Disimpan",
-                HttpStatus.CREATED,null,null,request);
+        return GlobalResponse.dataBerhasilDisimpan(request);
     }
 
     @Override
     public ResponseEntity<Object> update(Long id, Produk produk, HttpServletRequest request) {
         if(produk==null){
-            return new ResponseHandler().handleResponse("Data Gagal Diubah",
-                    HttpStatus.BAD_REQUEST,null,"SLS03FV011",request);
+            return GlobalResponse.dataGagalDiubah("SLS03FV011",request);
         }
         try{
             Optional<Produk> optionalProduk = produkRepo.findById(id);
             if(optionalProduk.isEmpty()){
-                return new ResponseHandler().handleResponse("Data Tidak Ditemukan",
-                        HttpStatus.NOT_FOUND,null,"SLS03FV012",request);
+                return GlobalResponse.dataTidakDitemukan("SLS03FV012",request);
             }
             Produk nextProduk = optionalProduk.get();
             nextProduk.setKategoriProduk(produk.getKategoriProduk());
@@ -94,33 +89,27 @@ public class ProdukService implements IService<Produk>, IReport<Produk> {
 
         }catch (Exception e){
             LoggingFile.logException(className,"update(Long id,Produk produk, HttpServletRequest request) "+ RequestCapture.allRequest(request),e);
-            return new ResponseHandler().handleResponse("Data Gagal Diubah",
-                    HttpStatus.INTERNAL_SERVER_ERROR,null,"SLS03FE011",request);
+            return GlobalResponse.dataGagalDiubah("SLS03FE011",request);
         }
-        return new ResponseHandler().handleResponse("Data Berhasil Diubah",
-                HttpStatus.OK,null,null,request);
+        return GlobalResponse.dataBerhasilDiubah(request);
     }
 
     @Override
     public ResponseEntity<Object> delete(Long id, HttpServletRequest request) {
         if(id==null){
-            return new ResponseHandler().handleResponse("Data Gagal Dihapus",
-                    HttpStatus.BAD_REQUEST,null,"SLS03FV021",request);
+            return GlobalResponse.dataGagalDihapus("SLS03FV021",request);
         }
         try{
             Optional<Produk> optionalProduk = produkRepo.findById(id);
             if(optionalProduk.isEmpty()){
-                return new ResponseHandler().handleResponse("Data Tidak Ditemukan",
-                        HttpStatus.NOT_FOUND,null,"SLS03FV022",request);
+                return GlobalResponse.dataTidakDitemukan("SLS03FV022",request);
             }
             produkRepo.deleteById(id);
         }catch (Exception e){
             LoggingFile.logException(className,"delete(Long id, HttpServletRequest request)"+ RequestCapture.allRequest(request),e);
-            return new ResponseHandler().handleResponse("Data Gagal Dihapus",
-                    HttpStatus.INTERNAL_SERVER_ERROR,null,"SLS03FE021",request);
+            return GlobalResponse.dataGagalDihapus("SLS03FE021",request);
         }
-        return new ResponseHandler().handleResponse("Data Berhasil Dihapus",
-                HttpStatus.OK,null,null,request);
+        return GlobalResponse.dataBerhasilDihapus(request);
     }
 
     @Override
@@ -128,24 +117,20 @@ public class ProdukService implements IService<Produk>, IReport<Produk> {
         Produk nextProduk =null;
         RespoProdukDTO respoProdukDTO = null;
         if(id==null){
-            return new ResponseHandler().handleResponse("Data Tidak Ditemukan",
-                    HttpStatus.BAD_REQUEST,null,"SLS03FV031",request);
+            return GlobalResponse.dataTidakDitemukan("SLS03FV031",request);
         }
         try{
             Optional<Produk> optionalProduk = produkRepo.findById(id);
             if(optionalProduk.isEmpty()){
-                return new ResponseHandler().handleResponse("Data Tidak Ditemukan",
-                        HttpStatus.NOT_FOUND,null,"SLS03FV032",request);
+                return GlobalResponse.dataTidakDitemukan("SLS03FV032",request);
             }
             nextProduk = optionalProduk.get();
             respoProdukDTO = entityToDTO(nextProduk);
         }catch (Exception e){
             LoggingFile.logException(className,"findById(Long id, HttpServletRequest request) "+ RequestCapture.allRequest(request),e);
-            return new ResponseHandler().handleResponse("Data Gagal Diubah",
-                    HttpStatus.INTERNAL_SERVER_ERROR,null,"SLS03FE031",request);
+            return GlobalResponse.terjadiKesalahan("SLS03FE031",request);
         }
-        return new ResponseHandler().handleResponse("Data Ditemukan",
-                HttpStatus.OK,respoProdukDTO,null,request);
+        return GlobalResponse.dataDitemukan(respoProdukDTO,request);
     }
 
     @Override
@@ -157,20 +142,16 @@ public class ProdukService implements IService<Produk>, IReport<Produk> {
         try {
             page = produkRepo.findAll(pageable);
             if(page.isEmpty()){
-                return new ResponseHandler().handleResponse("Data Tidak Ditemukan",
-                        HttpStatus.NOT_FOUND,null,"SLS03FV041",request);
+                return GlobalResponse.dataTidakDitemukan("SLS03FV041",request);
             }
 //            listDTO = entityToDTO(page.getContent());//List<Produk> -> List<RespoProduk>
             listDTO = entityToDTO(page.getContent());//List<Produk> -> List<RespoProduk>
             data = tp.transformPagination(listDTO,page,"id","");
         }catch (Exception e){
             LoggingFile.logException(className,"findAll(Pageable pageable, HttpServletRequest request) "+ RequestCapture.allRequest(request),e);
-            return new ResponseHandler().handleResponse("Internal Server Error",
-                    HttpStatus.INTERNAL_SERVER_ERROR,null,"SLS03FE041",request);
+            return GlobalResponse.terjadiKesalahan("SLS03FE041",request);
         }
-
-        return new ResponseHandler().handleResponse("Data Ditemukan",
-                HttpStatus.OK,data,null,request);
+        return GlobalResponse.dataDitemukan(data,request);
     }
 
 //    public ResponseEntity<Object> findAll(Pageable pageable, HttpServletRequest request) {
@@ -208,19 +189,15 @@ public class ProdukService implements IService<Produk>, IReport<Produk> {
                 default:page = produkRepo.findAll(pageable);
             }
             if(page.isEmpty()){
-                return new ResponseHandler().handleResponse("Data Tidak Ditemukan",
-                        HttpStatus.NOT_FOUND,null,"SLS03FV051",request);
+                return GlobalResponse.dataTidakDitemukan("SLS03FV051",request);
             }
             listDTO = entityToDTO(page.getContent());//List<Produk> -> List<RespoProduk>
             data = tp.transformPagination(listDTO,page,column,value);
         }catch (Exception e){
             LoggingFile.logException(className,"findByParam(Pageable pageable, String column, String value, HttpServletRequest request)  "+ RequestCapture.allRequest(request),e);
-            return new ResponseHandler().handleResponse("Internal Server Error",
-                    HttpStatus.INTERNAL_SERVER_ERROR,null,"SLS03FE051",request);
+            return GlobalResponse.terjadiKesalahan("SLS03FE051",request);
         }
-
-        return new ResponseHandler().handleResponse("Data Ditemukan",
-                HttpStatus.OK,data,null,request);
+        return GlobalResponse.dataDitemukan(data,request);
     }
 
     @Override
@@ -228,22 +205,18 @@ public class ProdukService implements IService<Produk>, IReport<Produk> {
         String message = "";
         try{
             if(!ExcelReader.hasWorkBookFormat(file)){
-                return new ResponseHandler().handleResponse("Tidak Mendukung File Tersebut",
-                        HttpStatus.UNSUPPORTED_MEDIA_TYPE,null,"SLS03FV061",request);
+                return GlobalResponse.formatHarusExcel("SLS03FV061",request);
             }
             List lt = new ExcelReader(file.getInputStream(),"Sheet1").getDataMap();
             if(lt.isEmpty()){
-                return new ResponseHandler().handleResponse("File Kosong",
-                        HttpStatus.BAD_REQUEST,null,"SLS03FV062",request);
+                return GlobalResponse.fileExcelKosong("SLS03FV062",request);
             }
             produkRepo.saveAll(convertListWorkBookToListEntity(lt,1L));
         }catch (Exception e){
             LoggingFile.logException(className,"uploadDataExcel(MultipartFile file, HttpServletRequest request)   "+ RequestCapture.allRequest(request),e);
-            return new ResponseHandler().handleResponse("Internal Server Error",
-                    HttpStatus.INTERNAL_SERVER_ERROR,null,"SLS03FE061",request);
+            return GlobalResponse.terjadiKesalahan("SLS03FE061",request);
         }
-        return new ResponseHandler().handleResponse("Upload File Berhasil",
-                HttpStatus.CREATED,null,null,request);
+        return GlobalResponse.uploadFileExcelBerhasil(request);
     }
 
     @Override
@@ -258,15 +231,15 @@ public class ProdukService implements IService<Produk>, IReport<Produk> {
                 default:list = produkRepo.findAll();
             }
             if(list.isEmpty()){
-                GlobalResponse.manualResponse(response, new ResponseHandler().handleResponse("Data Tidak Ditemukan",
-                        HttpStatus.NOT_FOUND,null,"SLS03FV071",request));
+
+                GlobalResponse.manualResponse(response, GlobalResponse.terjadiKesalahan("SLS03FV071",request));
                 return;
             }
             listDTO = entityToDTO(list);//List<Produk> -> List<RespoProduk>
 
             String headerKey = "Content-Disposition";
             sBuild.setLength(0);
-            String headerValue = sBuild.append("attachment; filename=akses_").
+            String headerValue = sBuild.append("attachment; filename=produk_").
                     append(new SimpleDateFormat("dd-MM-yyyy_HH:mm:ss").format(new Date())).
                     append(".xlsx").toString();//akses_12-05-2025_18:22:33
             response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
@@ -305,8 +278,7 @@ public class ProdukService implements IService<Produk>, IReport<Produk> {
         }catch (Exception e){
             System.out.println("Error : "+e.getMessage());
             LoggingFile.logException(className,"downloadReportExcel(String column, String value, HttpServletRequest request, HttpServletResponse response) "+ RequestCapture.allRequest(request),e);
-            GlobalResponse.manualResponse(response, new ResponseHandler().handleResponse("Internal Server Error",
-                    HttpStatus.INTERNAL_SERVER_ERROR,null,"SLS03FE071",request));
+            GlobalResponse.manualResponse(response, GlobalResponse.terjadiKesalahan("SLS03FE071",request));
             return;
         }
     }
@@ -326,8 +298,7 @@ public class ProdukService implements IService<Produk>, IReport<Produk> {
                     list = produkRepo.findAll();
             }
             if (list.isEmpty()) {
-                GlobalResponse.manualResponse(response, new ResponseHandler().handleResponse("Data Tidak Ditemukan",
-                        HttpStatus.NOT_FOUND, null, "SLS03FV081", request));
+                GlobalResponse.manualResponse(response, GlobalResponse.dataTidakDitemukan("SLS03FV081",request));
                 return;
             }
             listDTO = entityToDTO(list);//List<Produk> -> List<RespoProduk>
@@ -358,12 +329,11 @@ public class ProdukService implements IService<Produk>, IReport<Produk> {
             mapResponse.put("timestamp", LocalDateTime.now());
             context.setVariables(mapResponse);
             strHtml = springTemplateEngine.process("global-report",context);
-            pdfGenerator.htmlToPdf(strHtml,"akses",response);
+            pdfGenerator.htmlToPdf(strHtml,"produk",response);
         }catch (Exception e){
             System.out.println("Error : "+e.getMessage());
             LoggingFile.logException(className,"downloadReportPDF(String column, String value, HttpServletRequest request, HttpServletResponse response) "+ RequestCapture.allRequest(request),e);
-            GlobalResponse.manualResponse(response, new ResponseHandler().handleResponse("Internal Server Error",
-                    HttpStatus.INTERNAL_SERVER_ERROR,null,"SLS03FE081",request));
+            GlobalResponse.manualResponse(response, GlobalResponse.terjadiKesalahan("SLS03FE081",request));
         }
     }
 

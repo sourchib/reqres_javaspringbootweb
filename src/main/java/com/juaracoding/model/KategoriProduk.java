@@ -1,6 +1,8 @@
 package com.juaracoding.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -21,12 +23,14 @@ public class KategoriProduk {
     private String nama;
 
     @Column(name = "CreatedBy",nullable = false,updatable = false)
-    private Long createdBy;
+    private Long createdBy=1L;
     @Column(name = "CreatedDate",nullable = false,updatable = false)
+    @CreationTimestamp
     private LocalDateTime createdDate;
     @Column(name = "ModifiedBy",insertable = false)
-    private Long modifiedBy;
+    private Long modifiedBy=1L;
     @Column(name = "ModifiedDate",insertable = false)
+    @UpdateTimestamp
     private LocalDateTime modifiedDate;
 
     public Long getId() {
