@@ -1,7 +1,6 @@
 package com.juaracoding.repo;
 
 import com.juaracoding.model.Customer;
-import com.juaracoding.model.Produk;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

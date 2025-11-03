@@ -21,6 +21,10 @@ public class KategoriProdukController {
     @Autowired
     private KategoriProdukService kategoriprodukService;
 
+//    @PostMapping("/save")
+//    public ResponseEntity<Object> saveOpen(@Valid @RequestBody ValKategoriProdukDTO valProdukDTO, HttpServletRequest request){
+//        return kategoriprodukService.save(kategoriprodukService.mapDtoToEntity(valProdukDTO),request);
+//    }
     @PostMapping
     public ResponseEntity<Object> save(@Valid @RequestBody ValKategoriProdukDTO valProdukDTO, HttpServletRequest request){
         return kategoriprodukService.save(kategoriprodukService.mapDtoToEntity(valProdukDTO),request);

@@ -16,6 +16,8 @@ Version 1.0
 */
 public class GlobalFunction {
 
+    public static final String AUTH_HEADERS = "Authorization";
+
 
     public static Boolean checkValue(String value,String pattern){
         Boolean isValid = Pattern.compile(pattern).matcher(value).find();

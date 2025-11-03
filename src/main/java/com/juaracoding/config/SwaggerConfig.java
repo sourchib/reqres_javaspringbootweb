@@ -18,9 +18,9 @@ public class SwaggerConfig {
     @Bean
     public OpenAPI openAPI() {
         return new OpenAPI().addSecurityItem(new SecurityRequirement().addList("Bearer Authentication"))
-//                .components(new Components().
-//                        addSecuritySchemes("Bearer Authentication", createAPIKeyScheme())
-//                )
+                .components(new Components().
+                        addSecuritySchemes("Bearer Authentication", createAPIKeyScheme())
+                )
                 .info(new Info().title("Springboot+JPA+JWT+SQLServer")
                         .description("SPRINGBOOT REST API")
                         .version("1.0").contact(new Contact().name("Juara Coding Dev").email( "jcoding@juaracoding.com")
@@ -29,9 +29,9 @@ public class SwaggerConfig {
                                 .url("https://spring.io/")));
     }
 
-//    private SecurityScheme createAPIKeyScheme() {
-//        return new SecurityScheme().type(SecurityScheme.Type.HTTP)
-//                .bearerFormat("JWT")
-//                .scheme("bearer");
-//    }
+    private SecurityScheme createAPIKeyScheme() {
+        return new SecurityScheme().type(SecurityScheme.Type.HTTP)
+                .bearerFormat("JWT")
+                .scheme("bearer");
+    }
 }

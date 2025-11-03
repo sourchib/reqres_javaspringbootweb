@@ -856,3 +856,49 @@ Caused by: com.microsoft.sqlserver.jdbc.SQLServerException: Cannot drop the sequ
 2025-11-03 18:51:52.709 [http-nio-8033-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2025-11-03 18:51:52.710 [http-nio-8033-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2025-11-03 18:51:52.717 [http-nio-8033-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2025-11-03 22:24:35.021 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-11-03 22:24:35.367 [main] INFO  com.juaracoding.Main - Starting Main using Java 21 with PID 11616 (C:\Users\LENOVO\Documents\JavaBackEnd & DevOps\reqres_javaspringbootweb\target\classes started by LENOVO in C:\Users\LENOVO\Documents\JavaBackEnd & DevOps\reqres_javaspringbootweb)
+2025-11-03 22:24:35.402 [main] INFO  com.juaracoding.Main - No active profile set, falling back to 1 default profile: "default"
+2025-11-03 22:24:43.059 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-03 22:24:43.595 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 463 ms. Found 5 JPA repository interfaces.
+2025-11-03 22:24:45.298 [main] INFO  org.springframework.cloud.context.scope.GenericScope - BeanFactory id=c7ad69fd-29ac-308d-b71b-abb6f4339938
+2025-11-03 22:24:48.889 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8033 (http)
+2025-11-03 22:24:48.981 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8033"]
+2025-11-03 22:24:48.995 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-03 22:24:48.996 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-03 22:24:49.944 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-03 22:24:49.954 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 13842 ms
+2025-11-03 22:24:51.347 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-03 22:24:51.853 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-11-03 22:24:52.044 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-11-03 22:24:53.682 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-03 22:24:53.838 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-11-03 22:24:55.391 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: dddb68f4-685a-424c-be44-d955b075d615
+2025-11-03 22:24:55.397 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-11-03 22:24:56.589 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-03 22:25:05.251 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-03 22:25:06.933 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-03 22:25:12.548 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-11-03 22:25:22.611 [main] WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Unknown Template Mode 'XHTML'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+2025-11-03 22:25:26.652 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-03 22:25:28.915 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2025-11-03 22:25:37.222 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-11-03 22:25:37.482 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8033"]
+2025-11-03 22:25:37.567 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8033 (http) with context path '/'
+2025-11-03 22:25:38.639 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-11-03 22:25:38.864 [main] INFO  com.juaracoding.Main - Started Main in 70.521 seconds (process running for 77.045)
+2025-11-03 22:25:54.347 [http-nio-8033-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-03 22:25:54.347 [http-nio-8033-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-11-03 22:25:54.351 [http-nio-8033-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2025-11-03 22:32:32.956 [SpringApplicationShutdownHook] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-03 22:32:34.003 [tomcat-shutdown] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-11-03 22:32:34.198 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-03 22:32:34.992 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-11-03 22:32:35.036 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
