@@ -1,0 +1,1217 @@
+_type: export
+__export_format: 4
+__export_date: 2025-11-02T22:48:01.658Z
+__export_source: insomnia.desktop.app:v2022.7.5
+resources:
+  - _id: req_04ef7ad4a96b4e55ba8e47adacd43f10
+    parentId: fld_428e1b1dd8b74c9d8965d8da435da4da
+    modified: 1761829110859
+    created: 1761829098285
+    url: "{{ _.host }}download/excel"
+    name: New Request
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1761829098285
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_428e1b1dd8b74c9d8965d8da435da4da
+    parentId: wrk_b681da8b42ef4afda4310ab90a77882b
+    modified: 1760967208588
+    created: 1760967208588
+    name: Batch28
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1760967208588
+    _type: request_group
+  - _id: wrk_b681da8b42ef4afda4310ab90a77882b
+    parentId: null
+    modified: 1677081615630
+    created: 1677081615630
+    name: My Collection
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_0285efab187040768e354000bcff7791
+    parentId: fld_428e1b1dd8b74c9d8965d8da435da4da
+    modified: 1761832340300
+    created: 1761832322724
+    url: "{{ _.host }}produk/download-excel?column=nama&value=aklsmndoajsdoiajsd"
+    name: downloadExcel
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1761789018849.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_395a9b47520e4485ac97e6fea30ba03f
+    parentId: fld_428e1b1dd8b74c9d8965d8da435da4da
+    modified: 1761834008014
+    created: 1761833994069
+    url: "{{ _.host }}produk/download-pdf?column=id&value="
+    name: downloadPDF
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1761768979131.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_05cde73367af4ad0940ae35aaf9ee00d
+    parentId: fld_0e549abd44ad4f7ba901f93fca0799d4
+    modified: 1761751483547
+    created: 1761748939414
+    url: "{{ _.host }}produk/upload"
+    name: upload
+    description: ""
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_7124b1f2257f4ebb8c528f8670c7fa07
+          name: file
+          value: ""
+          description: ""
+          type: file
+          fileName: D:\Batch28\pcmspringboot6\src\main\resources\excel\produk.xlsx
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+    authentication: {}
+    metaSortKey: -1761748939414
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_0e549abd44ad4f7ba901f93fca0799d4
+    parentId: fld_428e1b1dd8b74c9d8965d8da435da4da
+    modified: 1761660561427
+    created: 1761660561427
+    name: produk
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1761660561427
+    _type: request_group
+  - _id: req_63f8252f298a47d29fc574cc3a6d6fc7
+    parentId: fld_0e549abd44ad4f7ba901f93fca0799d4
+    modified: 1761740264299
+    created: 1761739907368
+    url: "{{ _.host }}produk/2"
+    name: findById
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1761739907368
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_710c7e00c1174717a3b1acb15ec08df8
+    parentId: fld_0e549abd44ad4f7ba901f93fca0799d4
+    modified: 1761747919018
+    created: 1761747669527
+    url: "{{ _.host }}produk/desc/id/0?column=nama&size=2&value=ke"
+    name: findByParam
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1761720071691
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_4e4fda1e6ada4197912fcb270c3930e3
+    parentId: fld_0e549abd44ad4f7ba901f93fca0799d4
+    modified: 1761742961278
+    created: 1761742948018
+    url: "{{ _.host }}produk"
+    name: findAll
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1761700236014
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_d2f7417d50f94f60bc2c7a290f80963a
+    parentId: fld_0e549abd44ad4f7ba901f93fca0799d4
+    modified: 1761661995584
+    created: 1761660564660
+    url: "{{ _.host }}produk"
+    name: save
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nama":"Parutan",
+        	"kategori":{
+        		"id":3
+        	},
+        	"list_supplier":[
+        		{
+        			"id":1
+        		},
+        		{
+        			"id":2
+        		},
+        		{
+        			"id":3
+        		}
+        	]
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1761660564660
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_2cf107a7bb8c47d09e95b8874fbf3e3a
+    parentId: fld_0e549abd44ad4f7ba901f93fca0799d4
+    modified: 1761662721651
+    created: 1761662672007
+    url: "{{ _.host }}produk/6"
+    name: update
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nama":"PISAU CUKUR",
+        	"kategori":{
+        		"id":2
+        	},
+        	"list_supplier":[
+        		{
+        			"id":1
+        		},
+        		{
+        			"id":2
+        		},
+        		{
+        			"id":3
+        		},
+        		{
+        			"id":4
+        		}
+        	]
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1761441823688
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_f3186c74ad2d42d88df4d77e93d91cdc
+    parentId: fld_0e549abd44ad4f7ba901f93fca0799d4
+    modified: 1761663780462
+    created: 1761663740707
+    url: "{{ _.host }}produk/5"
+    name: delete
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1761332453202
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_50865ee23c8d4572aa1488c505568dd6
+    parentId: fld_9a1bf535f8a745d3bdb8c076ca30800b
+    modified: 1761913797664
+    created: 1761913375325
+    url: "{{ _.host }}kategoriproduk/upload"
+    name: upload
+    description: ""
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_7124b1f2257f4ebb8c528f8670c7fa07
+          name: file
+          value: ""
+          description: ""
+          type: file
+          fileName: D:\Batch28\pcmspringboot6\src\main\resources\excel\kategori-produk.xlsx
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+    authentication: {}
+    metaSortKey: -1761748939414
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_9a1bf535f8a745d3bdb8c076ca30800b
+    parentId: fld_428e1b1dd8b74c9d8965d8da435da4da
+    modified: 1761913375271
+    created: 1761913375271
+    name: kategori-produk
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1761441819211
+    _type: request_group
+  - _id: req_1fe373fc8b1449eb86f2aebfb2ef91d5
+    parentId: fld_9a1bf535f8a745d3bdb8c076ca30800b
+    modified: 1761913386800
+    created: 1761913375302
+    url: "{{ _.host }}kategoriproduk/2"
+    name: findById
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1761739907368
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_3549f0df16d84e8baf68869699de5f65
+    parentId: fld_9a1bf535f8a745d3bdb8c076ca30800b
+    modified: 1761913692164
+    created: 1761913375316
+    url: "{{ _.host }}kategoriproduk/desc/id/0?column=nama&size=2&value=on"
+    name: findByParam
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1761720071691
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_74bc91cc524848ed9e972b65e3e15f81
+    parentId: fld_9a1bf535f8a745d3bdb8c076ca30800b
+    modified: 1761913391029
+    created: 1761913375309
+    url: "{{ _.host }}kategoriproduk"
+    name: findAll
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1761700236014
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_6596bb62f1b64fd781a6983daa0eaa16
+    parentId: fld_9a1bf535f8a745d3bdb8c076ca30800b
+    modified: 1761913472034
+    created: 1761913375276
+    url: "{{ _.host }}kategoriproduk"
+    name: save
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nama":"Liquid Ice"	
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1761660564660
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_4593cdd8f30a405fb152ddf5708d26e5
+    parentId: fld_9a1bf535f8a745d3bdb8c076ca30800b
+    modified: 1761913649396
+    created: 1761913375283
+    url: "{{ _.host }}kategoriproduk/5"
+    name: update
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nama":"Liquid Ice Blue"	
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1761441823688
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_b5300c152f144059b69c7822fc443c2a
+    parentId: fld_9a1bf535f8a745d3bdb8c076ca30800b
+    modified: 1761913399479
+    created: 1761913375294
+    url: "{{ _.host }}kategoriproduk/5"
+    name: delete
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1761332453202
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_795ccc1104db4d05afa92f5aa5874568
+    parentId: fld_a546a07f70a047be9ca9ec8229da67db
+    modified: 1761916396607
+    created: 1761916220319
+    url: "{{ _.host }}supplier/upload"
+    name: upload
+    description: ""
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_7124b1f2257f4ebb8c528f8670c7fa07
+          name: file
+          value: ""
+          description: ""
+          type: file
+          fileName: D:\Batch28\pcmspringboot6\src\main\resources\excel\supplier.xlsx
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+    authentication: {}
+    metaSortKey: -1761748939414
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_a546a07f70a047be9ca9ec8229da67db
+    parentId: fld_428e1b1dd8b74c9d8965d8da435da4da
+    modified: 1761916220273
+    created: 1761916220273
+    name: supplier
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1761332448103
+    _type: request_group
+  - _id: req_0743c4ea6cac473e90bb5aea10da8b58
+    parentId: fld_a546a07f70a047be9ca9ec8229da67db
+    modified: 1761916231550
+    created: 1761916220301
+    url: "{{ _.host }}supplier/2"
+    name: findById
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1761739907368
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_489a7553b4d34e46b7add0b019798e56
+    parentId: fld_a546a07f70a047be9ca9ec8229da67db
+    modified: 1761916314541
+    created: 1761916220309
+    url: "{{ _.host }}supplier/desc/id/0?column=nama&size=2&value=ju"
+    name: findByParam
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1761720071691
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_4d4bd8b2574e4c949154ed56c188379a
+    parentId: fld_a546a07f70a047be9ca9ec8229da67db
+    modified: 1761916235949
+    created: 1761916220305
+    url: "{{ _.host }}supplier"
+    name: findAll
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1761700236014
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_a8671415e98c48129c6983f43b86ffa9
+    parentId: fld_a546a07f70a047be9ca9ec8229da67db
+    modified: 1761916262610
+    created: 1761916220280
+    url: "{{ _.host }}supplier"
+    name: save
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nama":"PT ANGIN RIBOET"	
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1761660564660
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_b67cecf7ead1461b9ba1a86208a50be6
+    parentId: fld_a546a07f70a047be9ca9ec8229da67db
+    modified: 1761917599294
+    created: 1761916220289
+    url: "{{ _.host }}supplier/5"
+    name: update
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nama":"PT ANGIN RIBOET UPDATE ke 2"	
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1761441823688
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_b045ad2efb2c42118b8355f8a49dd3e1
+    parentId: fld_a546a07f70a047be9ca9ec8229da67db
+    modified: 1761918046495
+    created: 1761916220296
+    url: "{{ _.host }}supplier/14"
+    name: delete
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1761332453202
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_413dc32656a24defa5ffcdd8b5a99aae
+    parentId: fld_9e02bfbffc8b4ebda2fda4c02ec48bf2
+    modified: 1761920778611
+    created: 1761920425997
+    url: "{{ _.host }}customer/upload"
+    name: upload
+    description: ""
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_7124b1f2257f4ebb8c528f8670c7fa07
+          name: file
+          value: ""
+          description: ""
+          type: file
+          fileName: D:\Batch28\pcmspringboot6\src\main\resources\excel\customer.xlsx
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+    authentication: {}
+    metaSortKey: -1761748939414
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_9e02bfbffc8b4ebda2fda4c02ec48bf2
+    parentId: fld_428e1b1dd8b74c9d8965d8da435da4da
+    modified: 1761920425955
+    created: 1761920425955
+    name: customer
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1761277762549
+    _type: request_group
+  - _id: req_652fcaeea80a435fbdea7efd0dffa221
+    parentId: fld_9e02bfbffc8b4ebda2fda4c02ec48bf2
+    modified: 1761920425980
+    created: 1761920425980
+    url: "{{ _.host }}supplier/2"
+    name: findById
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1761739907368
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_4a3e07e7383446019529c5d95274dd37
+    parentId: fld_9e02bfbffc8b4ebda2fda4c02ec48bf2
+    modified: 1761921493259
+    created: 1761920425991
+    url: "{{ _.host }}customer/asc/id/0?column=umur&size=10&value=6"
+    name: findByParam
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1761720071691
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_c02f6f0b80254ce2ae8bf9272e43e70c
+    parentId: fld_9e02bfbffc8b4ebda2fda4c02ec48bf2
+    modified: 1761920880706
+    created: 1761920425985
+    url: "{{ _.host }}customer"
+    name: findAll
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1761700236014
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_e229bb73086a4eb0bc7e873438da9836
+    parentId: fld_9e02bfbffc8b4ebda2fda4c02ec48bf2
+    modified: 1761920425960
+    created: 1761920425960
+    url: "{{ _.host }}supplier"
+    name: save
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nama":"PT ANGIN RIBOET"	
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1761660564660
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_aa72e49a3eef406d901d770f1d65bff7
+    parentId: fld_9e02bfbffc8b4ebda2fda4c02ec48bf2
+    modified: 1761920425965
+    created: 1761920425965
+    url: "{{ _.host }}supplier/5"
+    name: update
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nama":"PT ANGIN RIBOET UPDATE ke 2"	
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1761441823688
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_4ae684ade6664559b36b0238bbe64544
+    parentId: fld_9e02bfbffc8b4ebda2fda4c02ec48bf2
+    modified: 1761920425974
+    created: 1761920425974
+    url: "{{ _.host }}supplier/14"
+    name: delete
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1761332453202
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_894cc37a508b4bbfa19c2da99fc1850d
+    parentId: fld_1905967b23de4ee794f81341f8535cca
+    modified: 1761223174238
+    created: 1761223082716
+    url: localhost:8080/external
+    name: New Request
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"id":12,
+        	"nama":"Kristo",
+        	"alamat":"Jakarta",
+        	"email":"kristo@gmail.com",
+        	"tanggalLahir":"2000-12-12"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1761223082716
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_1905967b23de4ee794f81341f8535cca
+    parentId: fld_428e1b1dd8b74c9d8965d8da435da4da
+    modified: 1761223076995
+    created: 1761223076995
+    name: external
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1761223076995
+    _type: request_group
+  - _id: req_85494310869146bf80a45ba8291687b2
+    parentId: fld_1905967b23de4ee794f81341f8535cca
+    modified: 1761309461236
+    created: 1761308739958
+    url: localhost:8080/external/rgx
+    name: rgx
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"id":12,
+        	"nama":"kristo",
+        	"alamat":"Jakarta",
+        	"email":"kristo@gmail.com",
+        	"tanggalLahir":"2000-12-12"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1761212625166.125
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_0182612647fe49bc919af09c0d056666
+    parentId: fld_1905967b23de4ee794f81341f8535cca
+    modified: 1761228334773
+    created: 1761228316750
+    url: localhost:8080/external/errorin
+    name: errorin
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1761202167616.25
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_abab507aac7b41afb80899ace0c1c9c6
+    parentId: fld_1905967b23de4ee794f81341f8535cca
+    modified: 1761707563305
+    created: 1761230596984
+    url: localhost:8033/external/errorin2
+    name: errorin2
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"id":12,
+        	"nama":"Kristo",
+        	"alamat":"Jakarta",
+        	"email":"kristo@gmail.com",
+        	"tanggalLahir":"2000-12-12"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1761191710066.375
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_15af1f6e54c341c1a73726e7c74759dd
+    parentId: fld_1905967b23de4ee794f81341f8535cca
+    modified: 1761224043054
+    created: 1761223705873
+    url: localhost:8080/external/mp
+    name: mp
+    description: ""
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_ddffe7635e854e01bd5a48da0f8174e7
+          name: file
+          value: ""
+          description: ""
+          type: file
+          fileName: D:\icon\click-1.png
+        - id: pair_cb547136692b44639a798bc9476b6995
+          name: data
+          value: "INI DATA DARI SERVER 1 - "
+          description: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+    authentication: {}
+    metaSortKey: -1761181252516.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_6c82ccca5d7d48e9ba0dbfc95b8a1784
+    parentId: fld_428e1b1dd8b74c9d8965d8da435da4da
+    modified: 1761140923855
+    created: 1761139422317
+    url: http://localhost:8080/mp/3/Paul%20Malau/1995-12-12/tambahan?no_hp=08129128984&alamat_lengkap=bogor
+    name: contohMultipart
+    description: ""
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_1c920e12ff4b4b8b98e7eeb96ea13a03
+          name: file_gambar
+          value: ""
+          description: ""
+          type: file
+          fileName: D:\icon\frame.png
+        - id: pair_a3e507e45c5a4fe9a3614dda7819c114
+          name: nilai1
+          value: INI NILAI 1 LOCH
+          description: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+    authentication: {}
+    metaSortKey: -1761139422317
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_47b792b6ae614170b768be5396147823
+    parentId: fld_428e1b1dd8b74c9d8965d8da435da4da
+    modified: 1761140874669
+    created: 1761140170192
+    url: http://localhost:8080/mparr/3/Paul%20Malau/1995-12-12/tambahan?no_hp=08129128984&alamat_lengkap=bogor
+    name: contohMultipartArray
+    description: ""
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_1c920e12ff4b4b8b98e7eeb96ea13a03
+          name: file
+          value: ""
+          description: ""
+          type: file
+          fileName: D:\icon\frame.png
+        - id: pair_a3e507e45c5a4fe9a3614dda7819c114
+          name: nilai1
+          value: INI NILAI 1 LOCH
+          description: ""
+        - id: pair_9d3f541303bb4bf7bfc3553a20787a22
+          name: nilai1
+          value: INI NILAI 1 YANG KE 2 LOCH
+          description: ""
+        - id: pair_76d35a31056249ca93eebb84774fae90
+          name: file
+          value: ""
+          description: ""
+          type: file
+          fileName: D:\icon\Check.png
+        - id: pair_2eb8bfe162d9462e970952da8de6c54e
+          name: file
+          value: ""
+          description: ""
+          type: file
+          fileName: D:\icon\Play.png
+        - id: pair_017d158a12044d5aabb5c66f74936908
+          name: file
+          value: ""
+          description: ""
+          type: file
+          fileName: D:\icon\save-old.png
+        - id: pair_e2e77e7370854d38b5a701028ecb8abc
+          name: file
+          value: ""
+          description: ""
+          type: file
+          fileName: D:\icon\Preview.png
+        - id: pair_5c4072c7dad14bfc965a49e5e7baf9b2
+          name: file
+          value: ""
+          description: ""
+          type: file
+          fileName: D:\icon\Camera.png
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+    authentication: {}
+    metaSortKey: -1761139222624.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_abdfc4b6ab914f2bb7be06950c59b7d0
+    parentId: fld_428e1b1dd8b74c9d8965d8da435da4da
+    modified: 1761139179472
+    created: 1761139022932
+    url: http://localhost:8080/pv/3/Paul%20Malau/1995-12-12/tambahan?no_hp=08129128984&alamat_lengkap=bogor
+    name: pv
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"cabang":"Jakarta Utara",
+        	"kode_pos":"11480",
+        	"jenis_kelamin":"pria"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1761139022932
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_2fc2a8417621476ba0551cbad6b4479b
+    parentId: fld_428e1b1dd8b74c9d8965d8da435da4da
+    modified: 1760967242601
+    created: 1760967215348
+    url: localhost:8080
+    name: New Request
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1760967215348
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_fd43fe2264c6d74d2fde6f360c6207c4d912c799
+    parentId: wrk_b681da8b42ef4afda4310ab90a77882b
+    modified: 1741236102949
+    created: 1677081619697
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: {}
+    color: null
+    isPrivate: false
+    metaSortKey: 1677081619697
+    _type: environment
+  - _id: jar_fd43fe2264c6d74d2fde6f360c6207c4d912c799
+    parentId: wrk_b681da8b42ef4afda4310ab90a77882b
+    modified: 1762037065047
+    created: 1677081619692
+    name: Default Jar
+    cookies:
+      - key: JSESSIONID
+        value: 9DC2AE9BD860E39B0A5D92F23B7B3CB5
+        domain: localhost
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2025-01-15T14:28:41.905Z
+        lastAccessed: 2025-11-01T22:44:25.047Z
+        id: "21846205460319523"
+    _type: cookie_jar
+  - _id: spc_f34eb7158d91498d866d4f7f1d1d3a03
+    parentId: wrk_b681da8b42ef4afda4310ab90a77882b
+    modified: 1677081615632
+    created: 1677081615632
+    fileName: My Collection
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_bc2041fea8dc40febce3fd96f329a6eb
+    parentId: env_fd43fe2264c6d74d2fde6f360c6207c4d912c799
+    modified: 1762037059125
+    created: 1741236142228
+    name: New Environment
+    data:
+      host: http://localhost:8066/
+      token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwYXVsLjEyMyIsImVtIjoicG9sbC5jaGlodXlAZ21haWwuY29tIiwiaHAiOiIwODEyMTMxNDEzMjEiLCJpZCI6MSwibmFsZW5nIjoiUGF1bCBNYWxhdSIsImV4cCI6MTc2MjAzODgzOCwiaWF0IjoxNzYyMDM3MDM4fQ.PTq2bXfI5MgA43YM7zE7CZj5r_8ZF5HrmVobZiFaYVcXjqMWMPl5GD3WnMvdSlcccKzMnSpi76gV4XGsFsqPMQ
+      ep-auth: abdef
+      paramCumix: cumicumi
+      cumiGoreng: hahaha
+      host27: http://localhost:8087/
+    dataPropertyOrder:
+      "&":
+        - host
+        - token
+        - ep-auth
+        - paramCumix
+        - cumiGoreng
+        - host27
+    color: null
+    isPrivate: false
+    metaSortKey: 1741236142228
+    _type: environment
