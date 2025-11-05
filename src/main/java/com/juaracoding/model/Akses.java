@@ -10,8 +10,10 @@ import java.util.List;
 
 @Entity
 @Table(name = "MstAkses")
+/** sebagai primary key dari entity akses */
 public class Akses {
 
+    /** sebagai primary key dari entity akses */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    @Column(name = "ID",columnDefinition = "comment 'cumi cumi goreng mentega' ")

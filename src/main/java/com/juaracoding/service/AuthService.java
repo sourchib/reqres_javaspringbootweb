@@ -145,6 +145,7 @@ public class AuthService implements UserDetailsService {
         String token = jwtUtility.doGenerateToken(mapData,userNext.getUsername());
 
 //        m.put("menu",new TransformationDataMenu().doTransformAksesMenuLogin(menu));
+        m.put("menu","Temporary");
         if(JwtConfig.getTokenEncryptEnable().equals("y")){
             token = Crypto.performEncrypt(token);
         }

@@ -11,6 +11,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -26,6 +27,7 @@ public class KategoriProdukController {
 //        return kategoriprodukService.save(kategoriprodukService.mapDtoToEntity(valProdukDTO),request);
 //    }
     @PostMapping
+    @PreAuthorize("hasAuthority('Kategori')")
     public ResponseEntity<Object> save(@Valid @RequestBody ValKategoriProdukDTO valProdukDTO, HttpServletRequest request){
         return kategoriprodukService.save(kategoriprodukService.mapDtoToEntity(valProdukDTO),request);
     }
@@ -40,11 +42,13 @@ public class KategoriProdukController {
     }
 
     @GetMapping("/{id}")
+    @PreAuthorize("hasAuthority('Kategori')")
     public ResponseEntity<Object> findById(@PathVariable Long id, HttpServletRequest request){
         return kategoriprodukService.findById(id,request);
     }
 
     @GetMapping
+    @PreAuthorize("hasAuthority('Kategori')")
     public ResponseEntity<Object> findAll(HttpServletRequest request){
         Pageable pageable = PageRequest.of(0, OtherConfig.getDefaultPaginationSize(), Sort.by("id"));//asc dan desc
         return kategoriprodukService.findAll(pageable,request);

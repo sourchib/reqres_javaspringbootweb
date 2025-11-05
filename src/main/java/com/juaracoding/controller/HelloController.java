@@ -3,12 +3,15 @@ package com.juaracoding.controller;
 import com.juaracoding.coretan.Coba;
 import com.juaracoding.coretan.Pelanggan;
 import com.juaracoding.service.BPService;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.net.http.HttpResponse;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -29,8 +32,9 @@ public class HelloController {
     Random random;
 
     @GetMapping("welcome")
-    public String welcome(){
+    public String welcome(HttpServletResponse response){
         coba.setNotif("Hello World");
+        response.setHeader("Nama","Paul  ");
         return coba.getNotif();
     }
 
@@ -39,7 +43,8 @@ public class HelloController {
         Map<String, Object> m = new HashMap<>();
         m.put("id",1L);
         m.put("nama","Paul");
-        m.put("timestamp", LocalDateTime.now());
+//        m.put("timestamp", LocalDateTime.now());
+        m.put("timestamp", new Date());
         return m;
     }
 

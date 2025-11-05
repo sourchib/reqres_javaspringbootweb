@@ -45,7 +45,9 @@ public class ProdukService implements IService<Produk>, IReport<Produk> {
     @Autowired
     private TransformPagination tp;
 
-    private ModelMapper modelMapper = new ModelMapper();
+    @Autowired
+    private ModelMapper modelMapper ;
+
     private StringBuilder sBuild = new StringBuilder();
     private static final String className = "ProdukService";
 

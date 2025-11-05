@@ -1,5 +1,10 @@
 package com.juaracoding.util;
 
+import com.juaracoding.config.JwtConfig;
+import com.juaracoding.security.Crypto;
+import com.juaracoding.security.JwtUtility;
+import jakarta.servlet.http.HttpServletRequest;
+
 import java.lang.reflect.Field;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -17,6 +22,15 @@ Version 1.0
 public class GlobalFunction {
 
     public static final String AUTH_HEADERS = "Authorization";
+
+    public static Map<String,Object> extractToken(HttpServletRequest request){
+        String token = request.getHeader("Authorization");
+        token = token.substring(7);
+        if(JwtConfig.getTokenEncryptEnable().equals("y")){
+            token = Crypto.performDecrypt(token);
+        }
+        return new JwtUtility().mappingBodyToken(token);
+    }
 
 
     public static Boolean checkValue(String value,String pattern){

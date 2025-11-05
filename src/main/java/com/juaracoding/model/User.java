@@ -93,6 +93,7 @@ public class User implements UserDetails {
         for (Menu m :lt) {
             grantedAuthorities.add(new SimpleGrantedAuthority(m.getNama()));
         }
+        System.out.println("Authorization : "+grantedAuthorities);
         return grantedAuthorities;
     }
 
