@@ -3,6 +3,7 @@ package com.juaracoding.config;
 
 import com.cloudinary.Cloudinary;
 import com.juaracoding.security.Crypto;
+import org.apache.xmlbeans.ResourceLoader;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -10,7 +11,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.core.env.Environment;
-import org.springframework.ui.ModelMap;
+import org.springframework.core.io.Resource;
+import org.springframework.mail.javamail.JavaMailSender;
 
 import javax.sql.DataSource;
 import java.util.Random;

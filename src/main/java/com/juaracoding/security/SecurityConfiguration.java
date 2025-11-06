@@ -57,7 +57,7 @@ public class SecurityConfiguration {
             authorizeHttpRequests(
                     request->request.requestMatchers(
                             "/auth/**"
-//                            , "/kategoriproduk/save"
+                            , "/contoh"
                             ,"/swagger-ui/**"
                             ,"/v3/api-docs/**"
                     ).permitAll().anyRequest().authenticated()).

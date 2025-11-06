@@ -56,7 +56,7 @@ public class Crypto {
 //        String strToEncrypt = "jdbc:sqlserver://host.docker.internal;databaseName=BEB24;schema=dbproject;trustServerCertificate=true";//put text to encrypt in here
 //        String strToEncrypt = "jdbc:sqlserver://host.docker.internal;trustServerCertificate=true;databaseName=BEB25";//put text to encrypt in here
 //        String strToEncrypt = "jdbc:sqlserver://host.docker.internal;encrypt=true;trustServerCertificate=true;databaseName=BEB27;schema=dbo";//put text to encrypt in here
-        String strToEncrypt = "124|-|@5!A";//put text to encrypt in here
+        String strToEncrypt = "jdbc:sqlserver://host.docker.internal;databaseName=BEB28;schema=projectz;encrypt=true;trustServerCertificate=true";//put text to encrypt in here
         System.out.println("Encryption Result : "+performEncrypt(strToEncrypt));
 
 //        jdbc:sqlserver://java-be-1:3377;databaseName=BEB24;schema=dbproject;trustServerCertificate=true

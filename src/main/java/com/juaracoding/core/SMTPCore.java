@@ -1,16 +1,30 @@
 package com.juaracoding.core;
 
 import com.juaracoding.config.SMTPConfig;
+import jakarta.activation.DataHandler;
+import jakarta.activation.DataSource;
 import jakarta.mail.*;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeBodyPart;
 import jakarta.mail.internet.MimeMessage;
 import jakarta.mail.internet.MimeMultipart;
+import jakarta.mail.util.ByteArrayDataSource;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 import java.util.Properties;
 
+@Component
 public class SMTPCore {
+    @Autowired
+    public JavaMailSender javaMailSender;
+    @Autowired
+    public ResourceLoader resourceLoader;
 
     Properties prop ;
     private Message message ;
@@ -19,12 +33,6 @@ public class SMTPCore {
     private StringBuilder sBuild = new StringBuilder();
     private MimeBodyPart messageBodyPart;
     private Multipart multipart;
-
-    private String[] mailTo;
-    private String subject;
-    private String content;
-    private String [] attachment;
-
 
     private Properties getTLSProp()
     {
@@ -86,6 +94,7 @@ public class SMTPCore {
                 });
 
 
+        MimeMessageHelper helper ;
         try {
             message = new MimeMessage(session);
             message.setFrom(new InternetAddress(SMTPConfig.getEmailUserName()));
@@ -108,7 +117,6 @@ public class SMTPCore {
             if (attachFiles != null && attachFiles.length > 0) {
                 for (String filePath : attachFiles) {
                     MimeBodyPart attachPart = new MimeBodyPart();
-
                     try {
                         attachPart.attachFile(filePath);
                     } catch (Exception ex) {
@@ -124,6 +132,34 @@ public class SMTPCore {
             // sends the e-mail
             Transport.send(message);
         } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+        return true;
+    }
+
+    public boolean sendMailWithAttachment(String[] strMailTo,
+                                          String strSubject,
+                                          String strContentMessage,
+                                          String[] attachFiles) {
+
+        try {
+            MimeMessage message = javaMailSender.createMimeMessage();
+            MimeMessageHelper helper = new MimeMessageHelper(message,true);
+            helper.setTo(strMailTo);
+            helper.setSubject(strSubject);
+            helper.setText(strContentMessage,true);
+
+            if (attachFiles != null && attachFiles.length > 0) {
+                for (String path : attachFiles) {
+                    Resource resource = resourceLoader.getResource(path);
+                    helper.addAttachment(resource.getFilename(), resource);
+                }
+            }
+
+            javaMailSender.send(message);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
             return false;
         }
         return true;
